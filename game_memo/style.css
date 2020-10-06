@@ -1,0 +1,46 @@
+.container {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#box {
+    margin: 0 auto;
+    width: 90vh;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.card {
+    width: 8vh;
+    height: 8vh;
+    background: rgba(60, 138, 141, 0.562);
+    border: 1px solid rgb(60, 138, 141);
+    margin: 1px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgba(255, 255, 255, 0);
+}
+
+.view {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.done {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    opacity: .5;
+}
