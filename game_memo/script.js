@@ -24,9 +24,7 @@
         createCards(smilesAll);
     }
 // создаём карточки игры
-    let cards = [ ];
-//пара "открытых" для сравнения
-    let pair = [];
+    let cards = [];
 
     function createCards(smilesAll) {
         for (let i = 0; i < smilesAll.length; i++) {
@@ -44,14 +42,15 @@
         fieldSize = event.target.value;
         console.log(fieldSize);
         box.className = 's'+fieldSize;
-        console.log(box);
         smilesCard();
         openCard();
     }
 
 // по клику 
 function openCard() {   
-cards.forEach(element => element.addEventListener('click', function openCards() {
+    //пара "открытых" для сравнения
+    let pair = [];
+    cards.forEach(element => element.addEventListener('click', function openCards() {
     // снять возможность клика по ранее выбранным карточкам
     if (element.className !== 'card') {
         return false
@@ -61,23 +60,33 @@ cards.forEach(element => element.addEventListener('click', function openCards() 
             pair.push(element);
             this.classList.add('view');
     // открыто 2 и больше картотчек
-        } if (pair.length > 1) {
+        } if (pair.length > 1) {        
             let previous = 0;
             pair.forEach(function(element) {
-    //совпало значение открытых карточек - скрываем        
+    //совпало значение открытых карточек - скрываем
                 if (previous == element.innerHTML) {
-                    // console.log('sucses')
                     setTimeout(() => {
+                        console.log('pair to close', pair);
+                        if (pair.length < 2) {
+                            return
+                        }
                         pair.forEach(element => 
-                        element.classList.add('done'))}, 
-                        1000);
+                        element.classList.add('done'));
+                        pair.forEach(element => 
+                        element.classList.remove('view')); 
+                        pair = []
+                    }, 
+                    1000);
                 }
                 previous = element.innerHTML;
-            })
+            });
             setTimeout(() => {
-                pair.forEach(element => 
-                element.classList.remove('view')); 
-                pair = []}, 
+                console.log('pair to hide', pair);
+                if (pair.length > 1) {
+                    pair.forEach(element => 
+                    element.classList.remove('view')); 
+                    pair = []}
+                }, 
                 1000);            
 
             let gameOver = cards.every(element => element.className !== 'card');
@@ -86,8 +95,9 @@ cards.forEach(element => element.addEventListener('click', function openCards() 
                     box.textContent = "U're WIN";
                     box.style.fontSize = '80px';
                     box.style.background = 'rgba(60, 138, 141, 0.562)';
-                }
-            }
+                }};
+            
             final();   
-     }};
+        }};
 }))};
+

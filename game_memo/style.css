@@ -22,23 +22,19 @@ h1 {
 }
 
 .s4 {
-    width: 290px;
-    height: 290px;
+    width: 300px;
 }
 
 .s6 {
-    width: 435px;
-    height: 435px;
+    width: 440px;
 }
 
 .s8 {
-    width: 580px;
-    height: 580px;
+    width: 590px;
 }
 
 .s10 {
     width: 730px;
-    height: 730px;
 }
 
 #null_box {
@@ -64,26 +60,28 @@ h1 {
 }
 
 .card {
-    width: 68px;
-    height: 68px;
+    width: 67px;
+    height: 67px;
     background: rgba(60, 138, 141, 0.562);
     border: 1px solid rgb(60, 138, 141);
-    margin: 1px;
+    margin: 2px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    color: rgba(255, 255, 255, 0);
+    /* color: rgba(255, 255, 255, 0); */
 }
 
 .view {
     font-size: 40px;
     color: rgb(255, 255, 255);
+    transform: scale(1.1, 1.1);
+    transition-duration: 500ms;
 }
 
 .done {
     font-size: 40px;
     color: rgb(255, 255, 255);
-    opacity: .5;
+    opacity: .6;
 }
