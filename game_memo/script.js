@@ -81,10 +81,9 @@ function openCard() {
                 previous = element.innerHTML;
             });
             setTimeout(() => {
-                console.log('pair to hide', pair);
                 if (pair.length > 1) {
                     pair.forEach(element => 
-                    element.classList.remove('view')); 
+                    element.classList.remove('view'));
                     pair = []}
                 }, 
                 1000);            
@@ -94,10 +93,11 @@ function openCard() {
                 if (gameOver == true) {
                     box.textContent = "U're WIN";
                     box.style.fontSize = '80px';
-                    box.style.background = 'rgba(60, 138, 141, 0.562)';
+                    // box.style.background = 'rgba(60, 138, 141, 0.562)';
                 }};
             
-            final();   
+                setTimeout(() => {
+                    final()}, 1500);   
         }};
 }))};
 

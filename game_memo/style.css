@@ -3,6 +3,7 @@
     height: 100vh;
     margin: 0 auto;
     padding: 10px;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 h1 {
@@ -70,14 +71,15 @@ h1 {
     justify-content: center;
     align-items: center;
 
-    color: rgba(255, 255, 255, 0);
+    /* color: rgba(255, 255, 255, 0); */
 }
 
 .view {
     font-size: 40px;
     color: rgb(255, 255, 255);
-    transform: scale(1.1, 1.1);
+    /* transform: scale(1.1, 1.1); */
     transition-duration: 500ms;
+    transform: rotateY(360deg);
 }
 
 .done {
