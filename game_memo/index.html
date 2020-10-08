@@ -12,11 +12,11 @@
 </head>
 <body>
     <div class="container">
-        
-        <h1>Memoji_Game</h1>
-        <p>00:00</p>
-        <div id="box">
-           <div id="null_box">
+        <div class="top">
+            <h1>Memoji_Game</h1>
+            <!-- <p>00:00</p> -->
+        </div>
+        <div id="null_box">
             <p>what size of the playing field do u want?</p>
             <select name="field_size" id="size">
                 <option value="0" disabled selected>select field size</option>
@@ -25,9 +25,10 @@
                 <option value="8">8x8</option>
                 <option value="10">10x10</option>
             </select>
-            
-           </div>
         </div>
+        <div id="box">
+        </div>
+        <button type="reset">Let's play again!</button>
     </div>
 
     <script src="script.js"></script>

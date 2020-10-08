@@ -4,19 +4,26 @@
     margin: 0 auto;
     padding: 10px;
     font-family: 'Noto Sans JP', sans-serif;
+
+    display: flex;
+    flex-direction: column;
 }
 
-h1 {
-    text-align: left;
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 15px;
     opacity: .6;
-    letter-spacing: 1px;
-    display: inline-block;
 }
 
-p {
-    display: inline-block;
+h1 {   
+    letter-spacing: 1px;
+}
 
+.top p {
+    font-size: 2rem;
+    letter-spacing: 5px;
 }
 
 #box {
@@ -83,7 +90,6 @@ p {
 .view {
     font-size: 40px;
     color: rgb(255, 255, 255);
-    /* transform: scale(1.1, 1.1); */
     transition-duration: 500ms;
     transform: rotateY(360deg);
 }
@@ -92,4 +98,20 @@ p {
     font-size: 40px;
     color: rgb(255, 255, 255);
     opacity: .6;
+}
+
+button {
+    width: max-content;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    padding: .5rem;
+    border: 2px solid rgb(71, 160, 163);
+    border-radius: 5px;
+    background: rgba(71, 160, 163, 0.37);
+
+    display: none;
+}
+
+button:focus {
+    outline: none;
 }

@@ -1,9 +1,15 @@
-// window.onload = function () {
-
     let box = document.getElementById('box');
     let selectSize = document.getElementById('size');
     let options = Array.from(selectSize.options);
     let fieldSize = 0;
+    let nullBox = document.getElementById('null_box');
+    let again = document.querySelector('button');
+
+// секундомер
+
+
+
+
 
 // добываем и шафлим эмоджи
     function emojiSearch() {
@@ -34,13 +40,12 @@
             card.innerHTML = smilesAll[i];
             box.appendChild(card);
         }
-        document.getElementById('null_box').style.display = 'none';
+        nullBox.style.display = 'none';
     };
     
 // выбор размера поля и создание карточек
     selectSize.onchange = function count(event) {
         fieldSize = event.target.value;
-        console.log(fieldSize);
         box.className = 's'+fieldSize;
         smilesCard();
         openCard();
@@ -66,7 +71,6 @@ function openCard() {
     //совпало значение открытых карточек - скрываем
                 if (previous == element.innerHTML) {
                     setTimeout(() => {
-                        console.log('pair to close', pair);
                         if (pair.length < 2) {
                             return
                         }
@@ -93,11 +97,20 @@ function openCard() {
                 if (gameOver == true) {
                     box.textContent = "U're WIN";
                     box.style.fontSize = '80px';
-                    // box.style.background = 'rgba(60, 138, 141, 0.562)';
+                    box.style. padding = '15px';
+                    again.style.display = 'inline-block';
                 }};
             
                 setTimeout(() => {
                     final()}, 1500);   
         }};
 }))};
+
+again.addEventListener('click', function playAgain() {
+    box.textContent = '';
+    box.style.fontSize = '1rem';
+    box.style. padding = '0';
+    nullBox.style.display = 'flex';
+    again.style.display = 'none';
+})
 
