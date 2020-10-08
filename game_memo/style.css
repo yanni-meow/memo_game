@@ -1,28 +1,71 @@
 .container {
     max-width: 1420px;
+    height: 100vh;
     margin: 0 auto;
     padding: 10px;
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
+    padding: 15px;
+    opacity: .6;
+    letter-spacing: 1px;
 }
 
 #box {
     margin: 0 auto;
-    width: 90vh;
-    height: 90vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
     text-align: center;
 }
 
+.s4 {
+    width: 290px;
+    height: 290px;
+}
+
+.s6 {
+    width: 435px;
+    height: 435px;
+}
+
+.s8 {
+    width: 580px;
+    height: 580px;
+}
+
+.s10 {
+    width: 730px;
+    height: 730px;
+}
+
+#null_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    font-size: 1.5rem;
+}
+
+#null_box select {
+    max-width: fit-content;
+    font-size: 1.3rem;
+    padding: .5rem;
+    border: 2px solid rgb(71, 160, 163);
+    border-radius: 5px;
+    background: rgba(71, 160, 163, 0.37);
+}
+
+#null_box select:focus {
+    outline: none;
+}
+
 .card {
-    width: 8vh;
-    height: 8vh;
+    width: 68px;
+    height: 68px;
     background: rgba(60, 138, 141, 0.562);
     border: 1px solid rgb(60, 138, 141);
     margin: 1px;
