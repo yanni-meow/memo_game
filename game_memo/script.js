@@ -1,9 +1,9 @@
-    let box = document.getElementById('box');
-    let selectSize = document.getElementById('size');
-    let options = Array.from(selectSize.options);
-    let fieldSize = 0;
-    let nullBox = document.getElementById('null_box');
-    let again = document.querySelector('button');
+let box = document.getElementById('box');
+let selectSize = document.getElementById('size');
+let options = Array.from(selectSize.options);
+let fieldSize = 0;
+let nullBox = document.getElementById('null_box');
+let again = document.querySelector('button');
 
 // секундомер
 
@@ -12,37 +12,37 @@
 
 
 // добываем и шафлим эмоджи
-    function emojiSearch() {
-        return emoji [Math.floor(Math.random() * emoji.length)];
-    };
-    function shuffle(array) {
-        array.sort(() => Math.random() - 0.5);
-    };
+function emojiSearch() {
+    return emoji [Math.floor(Math.random() * emoji.length)];
+};
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+};
 
 // создаём массив парных эмоджи
-    function smilesCard() {
-        let smilesHalf = [];
-        for (let i = 0; i < (fieldSize*fieldSize/2); i++) {
-            smilesHalf.push(emojiSearch())
-        }
-        let smilesAll = smilesHalf.concat(smilesHalf);
-        shuffle(smilesAll);
-        createCards(smilesAll);
+function smilesCard() {
+    let smilesHalf = [];
+    for (let i = 0; i < (fieldSize*fieldSize/2); i++) {
+        smilesHalf.push(emojiSearch())
     }
+    let smilesAll = smilesHalf.concat(smilesHalf);
+    shuffle(smilesAll);
+    createCards(smilesAll);
+}
 // создаём карточки игры
-    let cards = [];
+let cards = [];
 
-    function createCards(smilesAll) {
-        for (let i = 0; i < smilesAll.length; i++) {
-            let card = document.createElement('div');
-            card.className = 'card';
-            cards.push(card);
-            card.innerHTML = smilesAll[i];
-            box.appendChild(card);
-        }
-        nullBox.style.display = 'none';
-    };
-    
+function createCards(smilesAll) {
+    for (let i = 0; i < smilesAll.length; i++) {
+        let card = document.createElement('div');
+        card.className = 'card';
+        cards.push(card);
+        card.innerHTML = smilesAll[i];
+        box.appendChild(card);
+    }
+    nullBox.style.display = 'none';
+};
+
 // выбор размера поля и создание карточек
     selectSize.onchange = function count(event) {
         fieldSize = event.target.value;
@@ -112,5 +112,5 @@ again.addEventListener('click', function playAgain() {
     box.style. padding = '0';
     nullBox.style.display = 'flex';
     again.style.display = 'none';
-})
-
+    options[0].selected = true;    
+});
